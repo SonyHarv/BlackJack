@@ -1,0 +1,14 @@
+header {
+    block-size: 6.25rem;
+    inline-size: auto;
+    background-color: var(--black);
+}
+
+.header h1 {
+    font-size: 1.875rem;
+    text-align: center;
+    color: var(--white);
+    margin: 0;
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
+}

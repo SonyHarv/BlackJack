@@ -1,0 +1,32 @@
+.button {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-inline-end: 4.5rem;
+}
+
+button {
+    inline-size: 8rem;
+    block-size: 2.5rem;
+    border-radius: 1.05rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: bold;
+    /* color: var(--black); */
+}
+
+.button-newJuego {
+    background: #1951FF;
+    color: var(--white);
+}
+
+.button-pedir {
+    background: #1981D1;
+    color: var(--white);
+}
+
+.button-detener {
+    background: #CA2B33;
+    color: var(--white);
+}

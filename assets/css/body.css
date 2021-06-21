@@ -1,0 +1,12 @@
+@import './header.css';
+@import './wrapper.css';
+@import './main.css';
+@import './footer.css';
+body {
+    margin: 0;
+    /* max-block-size: auto; */
+    /* background: #000000; */
+    /* background: -webkit-linear-gradient(to bottom, #0a810a, #000000); */
+    /* background: linear-gradient(to bottom, #0a810a, #000000); */
+    /* background: linear-gradient( to bottom, #0a810a 30.63%, #000000 102.18%); */
+}

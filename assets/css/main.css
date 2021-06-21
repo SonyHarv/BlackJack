@@ -1,0 +1,56 @@
+@import './button.css';
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7rem;
+    /* height: calc(100vh); */
+    block-size: 100vh;
+    /* background: linear-gradient(to bottom, #0a810a, #000000); */
+    background: radial-gradient(ellipse, #0a810a 0%, #000000 115%);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+.main-content {
+    /* display: inline-block;
+    flex-wrap: nowrap;
+    border: 1px solid red;
+    block-size: calc(100vh - 50px); */
+    border: 1px solid red;
+    /* inline-size: 20rem; */
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: 3.5rem;
+    margin-block-start: 1.5rem;
+    margin-block-end: 1.5rem;
+}
+
+.section-content {
+    border: 1px solid blue;
+    block-size: 100%;
+    max-width: 100%;
+    /* display: inline-block; */
+    padding-block-start: 1rem;
+    text-align: center;
+}
+
+
+/* img {
+    block-size: 160px;
+    inline-size: 110px;
+} */
+
+.carta {
+    position: relative;
+    block-size: 160px;
+    inline-size: 110px;
+    margin-inline-start: -55px;
+    padding-inline-start: 1rem;
+}
