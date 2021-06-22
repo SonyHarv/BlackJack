@@ -1,0 +1,26 @@
+.barajas {
+    /* padding-block-start: 1rem; */
+    padding-block-end: 1.5rem;
+    padding-inline-start: 4rem;
+    text-align: center;
+}
+
+.barajas h2 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-block-start: 1rem;
+    margin-block-end: 2rem;
+    text-align: initial;
+}
+
+.carta {
+    position: relative;
+    block-size: 10rem;
+    inline-size: 6.25rem;
+    margin-inline-start: -5rem;
+    padding-inline-start: 2rem;
+}
+
+.carta:first-of-type {
+    padding-inline-start: 3.5rem;
+}

@@ -4,6 +4,7 @@
 @import './footer.css';
 body {
     margin: 0;
+    /* min-block-size: 100vh; */
     /* max-block-size: auto; */
     /* background: #000000; */
     /* background: -webkit-linear-gradient(to bottom, #0a810a, #000000); */

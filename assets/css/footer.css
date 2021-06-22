@@ -1,9 +1,7 @@
 footer {
-    /* max-block-size: 100vmax; */
-    border: 1px solid red;
     margin: auto;
-    max-width: 100%;
-    /* block-size: 150px; */
+    width: 100%;
+    align-self: flex-end;
     background: var(--black);
 }
 
