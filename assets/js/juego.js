@@ -7,27 +7,41 @@
 //Patrón Modulo
 
 (() => {
+    'use strict'
 
     let deck = [];
-    let tipos = ['C', 'D', 'H', 'S'];
-    let especiales = ['A', 'J', 'Q', 'K'];
+    const tipos = ['C', 'D', 'H', 'S'],
+        especiales = ['A', 'J', 'Q', 'K'];
 
-    let puntosJugador = 0,
-        puntosComputadora = 0;
+    // let puntosJugador = 0,
+    //     puntosComputadora = 0;
+    let puntosJugadores = [];
 
     //Referencias del HTML
 
-    const btnNuevo = document.querySelector('#btnNuevo');
-    const btnPedir = document.querySelector('#btnPedir');
-    const btnDetener = document.querySelector('#btnDetener');
-    const obtenerCarta = document.querySelector('#jugadorCarta');
-    const obtenerCartaComputadora = document.querySelector('#computadoraCarta');
-    const puntosHtml = document.querySelectorAll('small');
+    const btnNuevo = document.querySelector('#btnNuevo'),
+        btnPedir = document.querySelector('#btnPedir'),
+        btnDetener = document.querySelector('#btnDetener');
+
+    const obtenerCarta = document.querySelector('#jugadorCarta'),
+        obtenerCartaComputadora = document.querySelector('#computadoraCarta'),
+        puntosHtml = document.querySelectorAll('small');
+
+    //Esta función inicializa el juego
+
+    const iniciarJuego = (numJugadores = 2) => {
+        deck = crearDeck();
+        for (let i = 0; i < numJugadores; i++) {
+            puntosJugadores.push(0);
+        }
+    }
 
     //Esta funcion me permite crear una baraja de cartas
 
     const crearDeck = () => {
-        for (i = 2; i <= 10; i++) {
+
+        deck = [];
+        for (let i = 2; i <= 10; i++) {
             for (let tipo of tipos) {
                 deck.push(i + tipo);
             }
@@ -38,11 +52,8 @@
                 deck.push(especial + tipo);
             }
         }
-        deck = _.shuffle(deck);
-        return deck;
+        return _.shuffle(deck);
     }
-
-    crearDeck();
 
     //Esta funcion me permite tomar una carta
 
@@ -51,9 +62,7 @@
         if (deck.length === 0) {
             throw 'No hay cartas en el deck';
         }
-
-        const carta = deck.pop();
-        return carta;
+        return deck.pop();
     }
 
     const valorCarta = (carta) => {
@@ -62,6 +71,11 @@
         return isNaN(valor) ?
             ((valor === 'A') ? 11 : 10) :
             (valor * 1);
+    }
+
+    //Esta fumción acumula los puntos de los jugadores
+
+    const acumularPuntos = () => {
 
     }
 
