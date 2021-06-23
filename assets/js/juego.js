@@ -13,6 +13,7 @@ let puntosJugador = 0,
 
 //Referencias del HTML
 
+const btnNuevo = document.querySelector('#btnNuevo');
 const btnPedir = document.querySelector('#btnPedir');
 const btnDetener = document.querySelector('#btnDetener');
 const obtenerCarta = document.querySelector('#jugadorCarta');
@@ -83,9 +84,20 @@ const turnoComputadora = (puntosMinimosJugador) => {
 
     } while ((puntosComputadora < puntosMinimosJugador) && (puntosMinimosJugador <= 21));
 
+    setTimeout(() => {
+        if (puntosComputadora === puntosMinimosJugador) {
+            alert('¡Empate! Casi ganas, sigue intentandolo!');
+        } else if (puntosMinimosJugador > 21) {
+            alert('¡Has perdido! No te rindas a la siguiente ganas!');
+        } else if (puntosComputadora > 21) {
+            alert('¡Genial! Has ganado, Felicidades!');
+        } else {
+            alert('¡Has perdido! No te rindas a la siguiente ganas!')
+        }
+    }, 50);
 }
 
-// Eventos y Turno Jugador
+// Eventos button Pedir y Turno Jugador
 
 btnPedir.addEventListener('click', () => {
 
@@ -102,13 +114,11 @@ btnPedir.addEventListener('click', () => {
 
     if (puntosJugador > 21) {
         console.warn('Vaya perdiste, intentalo de nuevo');
-        // alert('Vaya perdiste, intentalo de nuevo');
         btnPedir.disabled = true;
         btnDetener.disabled = true;
         turnoComputadora(puntosJugador);
     } else if (puntosJugador === 21) {
         console.warn('¡Felicidades has ganado!');
-        // alert('¡Felicidades has ganado!');
         btnPedir.disabled = true;
         btnDetener.disabled = true;
         turnoComputadora(puntosJugador);
@@ -116,10 +126,35 @@ btnPedir.addEventListener('click', () => {
 
 })
 
+// Evento button Detener
+
 btnDetener.addEventListener('click', () => {
 
     btnPedir.disabled = true;
     btnDetener.disabled = true;
     turnoComputadora(puntosJugador);
+
+})
+
+// Evento button Nuevo
+
+btnNuevo.addEventListener('click', () => {
+
+    console.clear();
+    deck = [];
+    deck = crearDeck();
+
+    puntosJugador = 0;
+    puntosComputadora = 0;
+
+    puntosHtml[0].innerText = 0;
+    puntosHtml[1].innerText = 0;
+
+    obtenerCarta.innerHTML = '';
+    obtenerCartaComputadora.innerHTML = '';
+
+    btnPedir.disabled = false;
+    btnDetener.disabled = false;
+
 
 })
