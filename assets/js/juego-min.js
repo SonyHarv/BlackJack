@@ -59,7 +59,7 @@ const miModulo = (() => {
             : t > 21
             ? alert("¡Genial! Has ganado, Felicidades!")
             : alert("¡Has perdido! No te rindas a la siguiente ganas!");
-        }, 500);
+        }, 1000);
       })();
     };
   return (
